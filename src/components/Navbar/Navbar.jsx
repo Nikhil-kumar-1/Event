@@ -17,7 +17,7 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <motion.nav 
+    <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -26,7 +26,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <motion.div 
+          <motion.div
             whileHover={{ scale: 1.05 }}
             className="flex-shrink-0 flex items-center"
           >
@@ -34,7 +34,7 @@ const Navbar = () => {
               <div className="absolute -inset-1 bg-purple-600 rounded-lg blur opacity-75"></div>
               <div className="relative px-4 py-2 bg-black rounded-lg">
                 <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
-                  EventGlow
+                  GoldenStorm
                 </h1>
               </div>
             </Link>
@@ -46,15 +46,13 @@ const Navbar = () => {
               {navItems.map((item) => (
                 <motion.div
                   key={item.name}
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.1,
-                    textShadow: "0 0 8px rgba(192, 132, 252, 0.8)"
+                    textShadow: "0 0 8px rgba(192, 132, 252, 0.8)",
                   }}
                   className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
                 >
-                  <Link to={item.path}>
-                    {item.name}
-                  </Link>
+                  <Link to={item.path}>{item.name}</Link>
                 </motion.div>
               ))}
               <motion.button
@@ -62,7 +60,7 @@ const Navbar = () => {
                 whileTap={{ scale: 0.95 }}
                 className="ml-4 px-6 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full text-sm font-medium shadow-lg hover:shadow-purple-500/50 transition-all duration-300"
               >
-                <Link to="/book-now">Book Now</Link>
+                <Link to="/book-event">Book Now</Link>
               </motion.button>
             </div>
           </div>
@@ -76,22 +74,32 @@ const Navbar = () => {
               aria-expanded={isOpen}
             >
               <svg
-                className={`${isOpen ? 'hidden' : 'block'} h-6 w-6`}
+                className={`${isOpen ? "hidden" : "block"} h-6 w-6`}
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
               <svg
-                className={`${isOpen ? 'block' : 'hidden'} h-6 w-6`}
+                className={`${isOpen ? "block" : "hidden"} h-6 w-6`}
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
           </div>
@@ -99,14 +107,14 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, height: 0 }}
-        animate={{ 
+        animate={{
           opacity: isOpen ? 1 : 0,
-          height: isOpen ? 'auto' : 0
+          height: isOpen ? "auto" : 0,
         }}
         transition={{ duration: 0.3 }}
-        className={`md:hidden ${isOpen ? 'block' : 'hidden'} overflow-hidden`}
+        className={`md:hidden ${isOpen ? "block" : "hidden"} overflow-hidden`}
       >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black bg-opacity-95">
           {navItems.map((item) => (
@@ -127,7 +135,7 @@ const Navbar = () => {
             </div>
             <div className="flex items-center px-5 pt-3 space-x-3">
               <FaEnvelope className="text-purple-400" />
-              <span className="text-gray-300">info@eventglow.com</span>
+              <span className="text-gray-300">info@GoldenStorm.com</span>
             </div>
           </div>
         </div>

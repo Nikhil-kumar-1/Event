@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { FaBirthdayCake, FaMicrophone, FaCameraRetro, FaLightbulb, FaGlassCheers, FaUsers } from "react-icons/fa";
 import { GiPartyPopper, GiSoundWaves, GiVideoCamera } from "react-icons/gi";
 import { MdEvent, MdLocalFlorist } from "react-icons/md"; // a generic event icon
+import { Link } from "react-router-dom";
 
 
 const Services = () => {
@@ -205,20 +206,14 @@ const Services = () => {
               Let's create something extraordinary together. Our team is ready to bring your vision to life with our premium event services.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <motion.button
+            <Link to="/book-event"> <motion.button
                 whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(255, 255, 255, 0.3)" }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-3 bg-white text-purple-900 rounded-full font-medium text-lg shadow-lg transition-all duration-300"
               >
                 Book a Consultation
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 bg-transparent border-2 border-white text-white rounded-full font-medium text-lg transition-all duration-300"
-              >
-                View Packages
-              </motion.button>
+              </motion.button></Link> 
+              
             </div>
           </div>
         </motion.div>

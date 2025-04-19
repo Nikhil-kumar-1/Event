@@ -7,6 +7,9 @@ import ServicesAll from './components/Service/ServiceAll';
 import AboutAll from './components/About/AboutAll';
 import Gallery from './components/Gallery/Gallery';
 import Contact from './components/Contact/Contact';
+import EventReels from './components/EventReels/EventReels';
+import BookEvent from './components/BookEvent/BookEvent';
+import CaseStudy from './components/CaseStudy/CaseStudy';
 
 const App = () => {
   return (
@@ -18,7 +21,9 @@ const App = () => {
         <Route path="/about" element={<AboutAll />} />
         <Route path="/gallery" element={<Gallery/>} />
         <Route path="/contact" element={<Contact />} />
-       
+        <Route path="/reels" element={<EventReels />} />
+        <Route path="/book-event" element={<BookEvent />} />
+        <Route path="/case-study" element={<CaseStudy />} />
       </Routes>
       <Footer />
     </Router>

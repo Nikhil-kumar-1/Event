@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FaArrowRight, FaCalendarCheck, FaMusic, FaCamera } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const floatingItems = [
@@ -81,14 +82,15 @@ const Hero = () => {
           </motion.p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <motion.button
+           <Link to="/about"> <motion.button
               whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(192, 132, 252, 0.5)" }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-medium text-lg shadow-lg hover:shadow-purple-500/50 transition-all duration-300 flex items-center justify-center gap-2"
             >
               Get Started <FaArrowRight />
             </motion.button>
-            
+            </Link>
+            <Link to="/reels">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -96,6 +98,7 @@ const Hero = () => {
             >
               Explore Events
             </motion.button>
+            </Link>
           </div>
         </motion.div>
 

@@ -1,8 +1,24 @@
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
-import { FaBirthdayCake, FaMicrophone, FaCameraRetro, FaLightbulb, FaGlassCheers, FaUsers, FaRegSmile, FaArrowRight } from "react-icons/fa";
-import { GiPartyPopper, GiSoundWaves, GiVideoCamera, GiPartyFlags, GiSparkles } from "react-icons/gi";
+import {
+  FaBirthdayCake,
+  FaMicrophone,
+  FaCameraRetro,
+  FaLightbulb,
+  FaGlassCheers,
+  FaUsers,
+  FaRegSmile,
+  FaArrowRight,
+} from "react-icons/fa";
+import {
+  GiPartyPopper,
+  GiSoundWaves,
+  GiVideoCamera,
+  GiPartyFlags,
+  GiSparkles,
+} from "react-icons/gi";
 import { MdEvent, MdLocalFlorist, MdOutlineEventSeat } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const ServicesAll = () => {
   // Floating decorative elements
@@ -13,8 +29,8 @@ const ServicesAll = () => {
       animation: {
         y: [0, -25, 0],
         rotate: [0, 15, -15, 0],
-        transition: { duration: 8, repeat: Infinity }
-      }
+        transition: { duration: 8, repeat: Infinity },
+      },
     },
     {
       icon: <GiSparkles className="text-4xl text-pink-400" />,
@@ -22,16 +38,16 @@ const ServicesAll = () => {
       animation: {
         y: [0, 25, 0],
         scale: [1, 1.3, 1],
-        transition: { duration: 7, repeat: Infinity, delay: 1 }
-      }
+        transition: { duration: 7, repeat: Infinity, delay: 1 },
+      },
     },
     {
       icon: <MdLocalFlorist className="text-4xl text-blue-400" />,
       position: "top-1/3 right-10",
       animation: {
         x: [0, 20, 0],
-        transition: { duration: 9, repeat: Infinity, delay: 0.5 }
-      }
+        transition: { duration: 9, repeat: Infinity, delay: 0.5 },
+      },
     },
   ];
 
@@ -44,9 +60,9 @@ const ServicesAll = () => {
         "Complete Wedding Coordination",
         "Venue Selection",
         "Bridal Party Management",
-        "Vendor Coordination"
+        "Vendor Coordination",
       ],
-      color: "from-pink-500 to-purple-600"
+      color: "from-pink-500 to-purple-600",
     },
     {
       title: "Corporate Events",
@@ -55,9 +71,9 @@ const ServicesAll = () => {
         "Conference Planning",
         "Product Launches",
         "Team Building Events",
-        "Annual General Meetings"
+        "Annual General Meetings",
       ],
-      color: "from-blue-500 to-cyan-500"
+      color: "from-blue-500 to-cyan-500",
     },
     {
       title: "Social Gatherings",
@@ -66,10 +82,10 @@ const ServicesAll = () => {
         "Birthday Celebrations",
         "Anniversary Parties",
         "Baby Showers",
-        "Graduation Events"
+        "Graduation Events",
       ],
-      color: "from-amber-500 to-yellow-500"
-    }
+      color: "from-amber-500 to-yellow-500",
+    },
   ];
 
   // All services
@@ -78,68 +94,83 @@ const ServicesAll = () => {
       icon: <GiVideoCamera className="text-4xl" />,
       title: "Full Event Production",
       description: "End-to-end event management from concept to execution",
-      color: "bg-gradient-to-r from-purple-600 to-pink-600"
+      color: "bg-gradient-to-r from-purple-600 to-pink-600",
     },
     {
       icon: <FaCameraRetro className="text-4xl" />,
       title: "Photography Services",
       description: "Professional event photography and videography packages",
-      color: "bg-gradient-to-r from-blue-600 to-cyan-500"
+      color: "bg-gradient-to-r from-blue-600 to-cyan-500",
     },
     {
       icon: <GiSoundWaves className="text-4xl" />,
       title: "Audio-Visual Solutions",
       description: "State-of-the-art sound and lighting systems",
-      color: "bg-gradient-to-r from-green-600 to-teal-500"
+      color: "bg-gradient-to-r from-green-600 to-teal-500",
     },
     {
       icon: <MdEvent className="text-4xl" />,
       title: "Gourmet Catering",
       description: "Customized menus for all types of events",
-      color: "bg-gradient-to-r from-red-600 to-pink-500"
+      color: "bg-gradient-to-r from-red-600 to-pink-500",
     },
     {
       icon: <MdOutlineEventSeat className="text-4xl" />,
       title: "Venue Sourcing",
       description: "Access to premium venues with expert selection",
-      color: "bg-gradient-to-r from-indigo-600 to-purple-500"
+      color: "bg-gradient-to-r from-indigo-600 to-purple-500",
     },
     {
       icon: <FaUsers className="text-4xl" />,
       title: "Guest Management",
       description: "Comprehensive invitation and seating solutions",
-      color: "bg-gradient-to-r from-cyan-600 to-blue-500"
+      color: "bg-gradient-to-r from-cyan-600 to-blue-500",
     },
     {
       icon: <FaLightbulb className="text-4xl" />,
       title: "Creative Design",
       description: "Custom themes and decor concepts",
-      color: "bg-gradient-to-r from-yellow-600 to-amber-500"
+      color: "bg-gradient-to-r from-yellow-600 to-amber-500",
     },
     {
       icon: <FaRegSmile className="text-4xl" />,
       title: "Entertainment",
       description: "Curated performers, DJs, and live acts",
-      color: "bg-gradient-to-r from-pink-600 to-rose-500"
-    }
+      color: "bg-gradient-to-r from-pink-600 to-rose-500",
+    },
   ];
 
   return (
     <>
       {/* SEO Optimization with React Helmet */}
       <Helmet>
-        <title>Premium Event Services | EventGlow - Complete Event Management Solutions</title>
-        <meta 
-          name="description" 
-          content="Discover our comprehensive range of premium event services including wedding planning, corporate events, photography, catering and more. We make your occasions spectacular." 
+        <title>
+          Premium Event Services | GoldenStorm - Complete Event Management
+          Solutions
+        </title>
+        <meta
+          name="description"
+          content="Discover our comprehensive range of premium event services including wedding planning, corporate events, photography, catering and more. We make your occasions spectacular."
         />
-        <meta name="keywords" content="event services, wedding planning, corporate events, event management, photography services, catering, venue booking" />
-        <meta property="og:title" content="Premium Event Services | EventGlow" />
-        <meta property="og:description" content="Complete event management solutions for weddings, corporate events and social gatherings." />
+        <meta
+          name="keywords"
+          content="event services, wedding planning, corporate events, event management, photography services, catering, venue booking"
+        />
+        <meta
+          property="og:title"
+          content="Premium Event Services | GoldenStorm"
+        />
+        <meta
+          property="og:description"
+          content="Complete event management solutions for weddings, corporate events and social gatherings."
+        />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://eventglow.com/services" />
-        <meta property="og:image" content="https://eventglow.com/images/services-preview.jpg" />
-        <link rel="canonical" href="https://eventglow.com/services" />
+        <meta property="og:url" content="https://GoldenStorm.com/services" />
+        <meta
+          property="og:image"
+          content="https://GoldenStorm.com/images/services-preview.jpg"
+        />
+        <link rel="canonical" href="https://GoldenStorm.com/services" />
       </Helmet>
 
       {/* Hero Section with Image */}
@@ -173,15 +204,10 @@ const ServicesAll = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl text-gray-200 mb-8"
           >
-            Elevate your events with our comprehensive range of professional services designed to create unforgettable experiences.
+            Elevate your events with our comprehensive range of professional
+            services designed to create unforgettable experiences.
           </motion.p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-medium text-lg shadow-lg hover:shadow-purple-500/50 transition-all duration-300 flex items-center mx-auto gap-2"
-          >
-            Explore Services <FaArrowRight />
-          </motion.button>
+        
         </div>
       </section>
 
@@ -199,9 +225,9 @@ const ServicesAll = () => {
           <motion.div
             key={index}
             initial={{ opacity: 0 }}
-            animate={{ 
+            animate={{
               opacity: 1,
-              ...item.animation
+              ...item.animation,
             }}
             transition={{ duration: 1, delay: index * 0.3 }}
             className={`absolute ${item.position} hidden lg:flex items-center justify-center`}
@@ -231,16 +257,24 @@ const ServicesAll = () => {
                 transition={{ type: "spring", stiffness: 300 }}
                 className="relative group"
               >
-                <div className={`absolute -inset-0.5 bg-gradient-to-r ${category.color} rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-200`}></div>
+                <div
+                  className={`absolute -inset-0.5 bg-gradient-to-r ${category.color} rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-200`}
+                ></div>
                 <div className="relative h-full bg-gray-900 p-8 rounded-xl border border-gray-800">
-                  <div className={`mb-6 w-20 h-20 rounded-full bg-gradient-to-r ${category.color} flex items-center justify-center text-white`}>
+                  <div
+                    className={`mb-6 w-20 h-20 rounded-full bg-gradient-to-r ${category.color} flex items-center justify-center text-white`}
+                  >
                     {category.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{category.title}</h3>
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    {category.title}
+                  </h3>
                   <ul className="space-y-3">
                     {category.services.map((service, i) => (
                       <li key={i} className="flex items-start">
-                        <div className={`flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-gradient-to-r ${category.color}`}></div>
+                        <div
+                          className={`flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-gradient-to-r ${category.color}`}
+                        ></div>
                         <span className="ml-3 text-gray-400">{service}</span>
                       </li>
                     ))}
@@ -248,8 +282,18 @@ const ServicesAll = () => {
                   <div className="mt-6">
                     <button className="text-sm font-medium text-purple-400 hover:text-purple-300 transition-colors flex items-center">
                       View all {category.title} services
-                      <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                      <svg
+                        className="ml-2 w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M9 5l7 7-7 7"
+                        ></path>
                       </svg>
                     </button>
                   </div>
@@ -285,10 +329,14 @@ const ServicesAll = () => {
                 >
                   <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-200"></div>
                   <div className="relative h-full bg-gray-900 p-6 rounded-xl border border-gray-800">
-                    <div className={`mb-4 w-16 h-16 rounded-lg ${service.color} flex items-center justify-center text-white`}>
+                    <div
+                      className={`mb-4 w-16 h-16 rounded-lg ${service.color} flex items-center justify-center text-white`}
+                    >
                       {service.icon}
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
+                    <h3 className="text-xl font-bold text-white mb-2">
+                      {service.title}
+                    </h3>
                     <p className="text-gray-400 mb-4">{service.description}</p>
                     <button className="text-sm font-medium text-purple-400 hover:text-purple-300 transition-colors">
                       Learn more →
@@ -329,27 +377,33 @@ const ServicesAll = () => {
                 }}
               />
             ))}
-            
+
             <div className="relative z-10 text-center">
-              <h3 className="text-3xl font-bold text-white mb-4">Custom Event Solutions</h3>
+              <h3 className="text-3xl font-bold text-white mb-4">
+                Custom Event Solutions
+              </h3>
               <p className="text-purple-100 mb-8 max-w-2xl mx-auto">
-                Have unique requirements? We specialize in creating completely customized event packages tailored to your specific needs.
+                Have unique requirements? We specialize in creating completely
+                customized event packages tailored to your specific needs.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <motion.button
-                  whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(255, 255, 255, 0.3)" }}
+             <Link to="/book-event">  <motion.button
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0 0 20px rgba(255, 255, 255, 0.3)",
+                  }}
                   whileTap={{ scale: 0.95 }}
                   className="px-8 py-3 bg-white text-purple-900 rounded-full font-medium text-lg shadow-lg transition-all duration-300"
                 >
                   Request Custom Quote
-                </motion.button>
-                <motion.button
+                </motion.button></Link> 
+              <Link to="/contact">  <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="px-8 py-3 bg-transparent border-2 border-white text-white rounded-full font-medium text-lg transition-all duration-300"
                 >
                   Speak to Our Team
-                </motion.button>
+                </motion.button></Link>
               </div>
             </div>
           </motion.div>
