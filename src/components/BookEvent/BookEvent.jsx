@@ -57,7 +57,7 @@ const BookEvent = () => {
         <meta name="description" content="Book your next event with EventGlow. We specialize in weddings, corporate events, and private parties to make your occasion unforgettable." />
       </Helmet>
 
-      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 text-gray-900 overflow-hidden">
+      <div className="min-h-screen bg-gradient-to-b from-purple-50 to-pink-50 text-gray-900 overflow-hidden">
         {/* Floating decorative elements */}
         <div className="fixed inset-0 pointer-events-none">
           {[...Array(15)].map((_, i) => (
@@ -75,7 +75,7 @@ const BookEvent = () => {
                 ease: "linear",
                 delay: Math.random() * 5
               }}
-              className="absolute text-purple-400 text-xl"
+              className="absolute text-pink-400 text-xl"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`
@@ -88,7 +88,7 @@ const BookEvent = () => {
 
         {/* Hero Section */}
         <section className="relative h-96 flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-900/70 to-blue-900/70 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-900/70 to-pink-900/70 z-10"></div>
           <img 
             src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
             alt="Event setup"
@@ -129,7 +129,9 @@ const BookEvent = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 {/* Form Left Side */}
                 <div className="p-8 md:p-12">
-                  <h2 className="text-3xl font-bold mb-2">Event Details</h2>
+                  <h2 className="text-3xl font-bold mb-2 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                    Event Details
+                  </h2>
                   <p className="text-gray-600 mb-8">Fill out the form to book your event with us</p>
                   
                   <form onSubmit={handleSubmit} className="space-y-6">
@@ -137,7 +139,7 @@ const BookEvent = () => {
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                          <FaUser className="text-gray-400" />
+                          <FaUser className="text-purple-400" />
                         </div>
                         <input
                           type="text"
@@ -157,7 +159,7 @@ const BookEvent = () => {
                         <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
                         <div className="relative">
                           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <FaEnvelope className="text-gray-400" />
+                            <FaEnvelope className="text-purple-400" />
                           </div>
                           <input
                             type="email"
@@ -176,7 +178,7 @@ const BookEvent = () => {
                         <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone</label>
                         <div className="relative">
                           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <FaPhone className="text-gray-400" />
+                            <FaPhone className="text-purple-400" />
                           </div>
                           <input
                             type="tel"
@@ -197,7 +199,7 @@ const BookEvent = () => {
                         <label htmlFor="eventType" className="block text-sm font-medium text-gray-700 mb-1">Event Type</label>
                         <div className="relative">
                           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <FaCalendarAlt className="text-gray-400" />
+                            <FaCalendarAlt className="text-purple-400" />
                           </div>
                           <select
                             id="eventType"
@@ -213,7 +215,7 @@ const BookEvent = () => {
                             ))}
                           </select>
                           <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                            <FaChevronDown className="text-gray-400" />
+                            <FaChevronDown className="text-purple-400" />
                           </div>
                         </div>
                       </div>
@@ -222,7 +224,7 @@ const BookEvent = () => {
                         <label htmlFor="guests" className="block text-sm font-medium text-gray-700 mb-1">Number of Guests</label>
                         <div className="relative">
                           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <FaUsers className="text-gray-400" />
+                            <FaUsers className="text-purple-400" />
                           </div>
                           <input
                             type="number"
@@ -244,7 +246,7 @@ const BookEvent = () => {
                         <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-1">Event Date</label>
                         <div className="relative">
                           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <FaCalendarAlt className="text-gray-400" />
+                            <FaCalendarAlt className="text-purple-400" />
                           </div>
                           <input
                             type="date"
@@ -262,7 +264,7 @@ const BookEvent = () => {
                         <label htmlFor="location" className="block text-sm font-medium text-gray-700 mb-1">Location</label>
                         <div className="relative">
                           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <FaMapMarkerAlt className="text-gray-400" />
+                            <FaMapMarkerAlt className="text-purple-400" />
                           </div>
                           <input
                             type="text"
@@ -295,7 +297,7 @@ const BookEvent = () => {
                       type="submit"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="w-full px-6 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-medium hover:opacity-90 transition-opacity"
+                      className="w-full px-6 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-medium hover:opacity-90 transition-opacity shadow-lg"
                     >
                       Submit Booking Request
                     </motion.button>
@@ -303,7 +305,7 @@ const BookEvent = () => {
                 </div>
 
                 {/* Right Side - Visuals */}
-                <div className="hidden lg:block bg-gradient-to-br from-purple-500 to-blue-600 p-8 md:p-12 relative overflow-hidden">
+                <div className="hidden lg:block bg-gradient-to-br from-purple-600 to-pink-500 p-8 md:p-12 relative overflow-hidden">
                   <div className="absolute inset-0 opacity-10">
                     <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-white rounded-full filter blur-3xl"></div>
                     <div className="absolute bottom-1/3 right-1/3 w-80 h-80 bg-pink-300 rounded-full filter blur-3xl"></div>
@@ -314,31 +316,31 @@ const BookEvent = () => {
                     <ul className="space-y-4 mb-8">
                       <li className="flex items-start">
                         <div className="flex-shrink-0 mt-1 mr-3">
-                          <RiSparklingFill className="text-yellow-300" />
+                          <RiSparklingFill className="text-pink-200" />
                         </div>
                         <span>100+ successful events organized</span>
                       </li>
                       <li className="flex items-start">
                         <div className="flex-shrink-0 mt-1 mr-3">
-                          <RiSparklingFill className="text-yellow-300" />
+                          <RiSparklingFill className="text-pink-200" />
                         </div>
                         <span>Customized event solutions</span>
                       </li>
                       <li className="flex items-start">
                         <div className="flex-shrink-0 mt-1 mr-3">
-                          <RiSparklingFill className="text-yellow-300" />
+                          <RiSparklingFill className="text-pink-200" />
                         </div>
                         <span>Professional event management</span>
                       </li>
                       <li className="flex items-start">
                         <div className="flex-shrink-0 mt-1 mr-3">
-                          <RiSparklingFill className="text-yellow-300" />
+                          <RiSparklingFill className="text-pink-200" />
                         </div>
                         <span>Premium vendor network</span>
                       </li>
                       <li className="flex items-start">
                         <div className="flex-shrink-0 mt-1 mr-3">
-                          <RiSparklingFill className="text-yellow-300" />
+                          <RiSparklingFill className="text-pink-200" />
                         </div>
                         <span>24/7 customer support</span>
                       </li>
@@ -359,7 +361,7 @@ const BookEvent = () => {
         </section>
 
         {/* Testimonials Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-50 to-blue-50">
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-50 to-pink-50">
           <div className="max-w-7xl mx-auto">
             <motion.h2 
               initial={{ opacity: 0, y: 50 }}
@@ -368,7 +370,7 @@ const BookEvent = () => {
               viewport={{ once: true }}
               className="text-3xl md:text-4xl font-bold mb-16 text-center"
             >
-              <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                 What Our Clients Say
               </span>
             </motion.h2>

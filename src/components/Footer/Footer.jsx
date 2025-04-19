@@ -8,6 +8,7 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const socialLinks = [
@@ -21,28 +22,28 @@ const Footer = () => {
     {
       title: "Services",
       links: [
-        { name: "Corporate Events", url: "#" },
-        { name: "Wedding Planning", url: "#" },
-        { name: "Concert Management", url: "#" },
-        { name: "Exhibition Planning", url: "#" },
+        { name: "Corporate Events", path: "/services" },
+        { name: "Wedding Planning", path: "/services" },
+        { name: "Concert Management", path: "/services" },
+        { name: "Exhibition Planning", path: "/services" },
       ],
     },
     {
       title: "Company",
       links: [
-        { name: "About Us", url: "#" },
-        { name: "Our Team", url: "#" },
-        { name: "Careers", url: "#" },
-        { name: "Testimonials", url: "#" },
+        { name: "About Us", path: "/about" },
+        { name: "Our Team", path: "/about" },
+        { name: "Testimonials", path: "/about" },
+        { name: "Case Studies", path: "/case-study" },
       ],
     },
     {
       title: "Support",
       links: [
-        { name: "FAQ", url: "#" },
-        { name: "Contact Us", url: "#" },
-        { name: "Privacy Policy", url: "#" },
-        { name: "Terms of Service", url: "#" },
+        { name: "Gallery", path: "/gallery" },
+        { name: "Event Reels", path: "/reels" },
+        { name: "Contact Us", path: "/contact" },
+        { name: "Book Event", path: "/book-event" },
       ],
     },
   ];
@@ -65,7 +66,7 @@ const Footer = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <div className="flex items-center">
+            <Link to="/" className="flex items-center">
               <div className="relative">
                 <div className="absolute -inset-1 bg-purple-600 rounded-lg blur opacity-75"></div>
                 <div className="relative px-4 py-2 bg-gray-900 rounded-lg">
@@ -74,7 +75,7 @@ const Footer = () => {
                   </h2>
                 </div>
               </div>
-            </div>
+            </Link>
             <p className="text-gray-400">
               Creating luminous experiences that leave lasting impressions. We
               illuminate every event with creativity and precision.
@@ -86,6 +87,8 @@ const Footer = () => {
                 <motion.a
                   key={index}
                   href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ y: -3, color: "#E879F9" }}
                   className="text-gray-400 hover:text-purple-400 text-xl transition-colors duration-300"
                   aria-label={social.name}
@@ -116,12 +119,12 @@ const Footer = () => {
                     whileHover={{ x: 5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <a
-                      href={link.url}
+                    <Link
+                      to={link.path}
                       className="text-gray-400 hover:text-purple-400 transition-colors duration-300"
                     >
                       {link.name}
-                    </a>
+                    </Link>
                   </motion.li>
                 ))}
               </ul>
@@ -150,7 +153,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <FaEnvelope className="text-purple-400" />
-                <span className="text-gray-400">info@GoldenStorm.com</span>
+                <span className="text-gray-400">info@goldenstorm.com</span>
               </li>
             </ul>
 
