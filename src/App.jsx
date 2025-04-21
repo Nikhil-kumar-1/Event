@@ -10,10 +10,12 @@ import Contact from './components/Contact/Contact';
 import EventReels from './components/EventReels/EventReels';
 import BookEvent from './components/BookEvent/BookEvent';
 import CaseStudy from './components/CaseStudy/CaseStudy';
+import ScrollToTop from './components/ScrollToTop/Scroll';
 
 const App = () => {
   return (
     <Router>
+      <ScrollToTop/>
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />

@@ -1,9 +1,16 @@
+import { useState, useRef, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
-import { FaPlay, FaHeart, FaShare, FaComment, FaMusic } from "react-icons/fa";
+import { FaPlay, FaHeart, FaShare, FaComment, FaMusic, FaTimes } from "react-icons/fa";
 import { RiSparklingFill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const EventReels = () => {
+  const [selectedReel, setSelectedReel] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRefs = useRef([]);
+  const modalVideoRef = useRef(null);
+
   const reels = [
     {
       id: 1,
@@ -11,7 +18,7 @@ const EventReels = () => {
       location: "Mumbai, India",
       likes: "12.4k",
       comments: "1.2k",
-      videoUrl: "https://cdn.pixabay.com/video/2020/08/30/48569-454825064_tiny.mp4"
+      videoUrl: "video.mp4"
     },
     {
       id: 2,
@@ -38,6 +45,45 @@ const EventReels = () => {
       videoUrl: "https://cdn.pixabay.com/video/2021/02/13/65150-513025128_tiny.mp4"
     }
   ];
+
+  const handleReelClick = (reel) => {
+    setSelectedReel(reel);
+    setIsPlaying(true);
+    // Pause all other videos
+    videoRefs.current.forEach(video => {
+      if (video && video !== modalVideoRef.current) {
+        video.pause();
+      }
+    });
+  };
+
+  const closeModal = () => {
+    setIsPlaying(false);
+    setTimeout(() => {
+      setSelectedReel(null);
+    }, 300); // Wait for animation to complete
+  };
+
+  useEffect(() => {
+    if (modalVideoRef.current) {
+      if (isPlaying) {
+        modalVideoRef.current.play().catch(e => console.log("Autoplay prevented:", e));
+      } else {
+        modalVideoRef.current.pause();
+      }
+    }
+  }, [isPlaying, selectedReel]);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape" && selectedReel) {
+        closeModal();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedReel]);
 
   return (
     <>
@@ -85,7 +131,7 @@ const EventReels = () => {
             playsInline 
             className="absolute w-full h-full object-cover"
           >
-            <source src="https://cdn.pixabay.com/video/2015/11/03/1258-144566586_tiny.mp4" type="video/mp4" />
+            <source src="video.mp4" type="video/mp4" />
           </video>
           
           <div className="relative z-20 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
@@ -140,7 +186,7 @@ const EventReels = () => {
             </motion.h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {reels.map((reel) => (
+              {reels.map((reel, index) => (
                 <motion.div 
                   key={reel.id}
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -148,11 +194,13 @@ const EventReels = () => {
                   transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
                   whileHover={{ y: -10 }}
-                  className="relative rounded-2xl overflow-hidden shadow-xl"
+                  className="relative rounded-2xl overflow-hidden shadow-xl cursor-pointer"
+                  onClick={() => handleReelClick(reel)}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10 opacity-70"></div>
                   
                   <video
+                    ref={el => videoRefs.current[index] = el}
                     autoPlay
                     loop
                     muted
@@ -202,6 +250,62 @@ const EventReels = () => {
           </div>
         </section>
 
+        {/* Video Modal */}
+        {selectedReel && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4"
+            onClick={closeModal}
+          >
+            <motion.div
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.9 }}
+              transition={{ duration: 0.3 }}
+              className="relative w-full max-w-4xl max-h-[90vh]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                className="absolute -top-12 right-0 text-white text-2xl z-50 hover:text-purple-400 transition-colors"
+                onClick={closeModal}
+              >
+                <FaTimes />
+              </button>
+              
+              <div className="relative w-full h-0 pb-[56.25%] overflow-hidden rounded-lg">
+                <video
+                  ref={modalVideoRef}
+                  controls
+                  autoPlay={isPlaying}
+                  loop
+                  playsInline
+                  className="absolute top-0 left-0 w-full h-full object-contain"
+                >
+                  <source src={selectedReel.videoUrl} type="video/mp4" />
+                </video>
+              </div>
+              
+              <div className="mt-4 text-white">
+                <h3 className="text-xl font-bold">{selectedReel.title}</h3>
+                <p className="text-gray-300">{selectedReel.location}</p>
+                <div className="flex items-center gap-4 mt-4">
+                  <div className="flex items-center gap-2">
+                    <FaHeart className="text-xl" />
+                    <span>{selectedReel.likes}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <FaComment className="text-xl" />
+                    <span>{selectedReel.comments}</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+
         {/* CTA Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -220,13 +324,14 @@ const EventReels = () => {
             <p className="text-xl text-gray-300 mb-8 relative z-10">
               Let us transform your vision into an unforgettable experience
             </p>
+            <Link to="/book-event">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-white text-purple-900 rounded-lg font-medium hover:bg-opacity-90 transition-all relative z-10"
             >
               Book Your Event Now
-            </motion.button>
+            </motion.button></Link>
           </motion.div>
         </section>
       </div>
