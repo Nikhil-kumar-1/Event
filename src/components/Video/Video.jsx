@@ -58,10 +58,10 @@ const Home = () => {
               transition={{ delay: 0.6, duration: 0.8 }}
               className="flex flex-col sm:flex-row justify-center gap-4"
             >
-           <Link to="/book-event">   <button className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-medium hover:opacity-90 transition-opacity">
+           <Link to="/book-event">   <button className="w-full px-6 py-3 md:px-8 md:py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-medium text-base md:text-lg shadow-lg hover:shadow-purple-500/50 transition-all duration-300 flex items-center justify-center gap-2">
                 Plan Your Event
               </button></Link>
-           <Link to="/reels">   <button className="px-8 py-3 bg-transparent border-2 border-white rounded-lg font-medium hover:bg-white hover:text-gray-900 transition-colors flex items-center justify-center gap-2">
+           <Link to="/reels">   <button className="w-full px-6 py-3 md:px-8 md:py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-medium text-base md:text-lg shadow-lg hover:shadow-purple-500/50 transition-all duration-300 flex items-center justify-center gap-2">
                 <FaPlay /> Watch Showreel
               </button></Link>
             </motion.div>
