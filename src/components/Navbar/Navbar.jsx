@@ -1,7 +1,6 @@
-import { motion } from "framer-motion";
-import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { useState } from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,59 +17,42 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className="fixed w-full z-50 bg-black bg-opacity-90 backdrop-blur-md border-b border-purple-500 border-opacity-30"
-    >
+    <nav className="fixed w-full z-50 bg-black bg-opacity-90 border-b border-amber-600 border-opacity-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="flex-shrink-0 flex items-center"
-          >
-            <Link to="/" className="relative">
-              <div className="absolute -inset-1 bg-purple-600 rounded-lg blur opacity-75"></div>
-              <div className="relative px-4 py-2 bg-black rounded-lg">
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
-                  GoldenStorm
-                </h1>
-              </div>
+        <div className="flex items-center justify-between h-24"> {/* Increased height to h-24 */}
+          {/* Logo with proper alignment and sizing */}
+          <div className="flex-shrink-0 flex items-center">
+            <Link to="/" className="flex items-center">
+              <img 
+                src="logo.png" 
+                alt="Golden Storm Logo" 
+                className="h-60 mt-5 w-auto"  // Increased height to h-16 (4rem)
+              />
             </Link>
-          </motion.div>
+          </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-center space-x-8">
+          <div className="hidden md:flex items-center">
+            <div className="ml-10 flex items-center space-x-6"> {/* Adjusted spacing */}
               {navItems.map((item) => (
-                <motion.div
+                <div
                   key={item.name}
-                  whileHover={{
-                    scale: 1.1,
-                    textShadow: "0 0 8px rgba(192, 132, 252, 0.8)",
-                  }}
-                  className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
+                  className="text-amber-100 hover:text-amber-300 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
                 >
                   <Link to={item.path}>{item.name}</Link>
-                </motion.div>
+                </div>
               ))}
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="ml-4 px-6 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full text-sm font-medium shadow-lg hover:shadow-purple-500/50 transition-all duration-300"
-              >
+              <button className="ml-6 px-6 py-2.5 bg-amber-500 hover:bg-amber-600 text-black rounded-full text-sm font-bold transition-colors duration-300">
                 <Link to="/book-event">Book Now</Link>
-              </motion.button>
+              </button>
             </div>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          {/* Mobile menu button - centered vertically */}
+          <div className="md:hidden flex items-center h-full">
             <button
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-amber-300 hover:text-yellow-500 hover:bg-amber-900/30 focus:outline-none"
               aria-label="Toggle menu"
               aria-expanded={isOpen}
             >
@@ -108,40 +90,36 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation */}
-      <motion.div
-        initial={{ opacity: 0, height: 0 }}
-        animate={{
-          opacity: isOpen ? 1 : 0,
-          height: isOpen ? "auto" : 0,
-        }}
-        transition={{ duration: 0.3 }}
-        className={`md:hidden ${isOpen ? "block" : "hidden"} overflow-hidden`}
-      >
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black bg-opacity-95">
+      <div className={`md:hidden ${isOpen ? "block" : "hidden"} bg-black`}>
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           {navItems.map((item) => (
-            <motion.div
+            <div
               key={item.name}
-              whileTap={{ scale: 0.95 }}
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800"
+              className="block px-3 py-3 rounded-md text-base font-medium text-amber-100 hover:text-amber-300 hover:bg-amber-900/20"
             >
               <Link to={item.path} onClick={toggleMenu}>
                 {item.name}
               </Link>
-            </motion.div>
+            </div>
           ))}
-          <div className="pt-4 pb-3 border-t border-gray-700">
+          <button className="w-full mt-2 px-4 py-3 bg-amber-500 hover:bg-amber-600 text-black rounded-md text-base font-bold">
+            <Link to="/book-event" onClick={toggleMenu}>
+              Book Now
+            </Link>
+          </button>
+          <div className="pt-4 pb-3 border-t border-amber-800/50">
             <div className="flex items-center px-5 space-x-3">
-              <FaPhoneAlt className="text-purple-400" />
-              <span className="text-gray-300">+1 (555) 123-4567</span>
+              <FaPhoneAlt className="text-amber-400" />
+              <span className="text-amber-200">+1 (555) 123-4567</span>
             </div>
             <div className="flex items-center px-5 pt-3 space-x-3">
-              <FaEnvelope className="text-purple-400" />
-              <span className="text-gray-300">info@GoldenStorm.com</span>
+              <FaEnvelope className="text-amber-400" />
+              <span className="text-amber-200">info@GoldenStorm.com</span>
             </div>
           </div>
         </div>
-      </motion.div>
-    </motion.nav>
+      </div>
+    </nav>
   );
 };
 

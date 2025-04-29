@@ -15,10 +15,23 @@ import { MdOutlineEmojiPeople, MdDiversity3 } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const AboutAll = () => {
+  // Gold color palette
+  const gold = {
+    100: "#FFF8E1",
+    200: "#FFECB3",
+    300: "#FFE082",
+    400: "#FFD54F",
+    500: "#FFC107", // Primary gold
+    600: "#FFB300",
+    700: "#FFA000",
+    800: "#FF8F00",
+    900: "#FF6F00"
+  };
+
   // Floating decorative elements
   const floatingElements = [
     {
-      icon: <GiPartyFlags className="text-4xl text-purple-400" />,
+      icon: <GiPartyFlags className="text-4xl" style={{ color: gold[400] }} />,
       position: "top-20 left-10",
       animation: {
         y: [0, -30, 0],
@@ -27,7 +40,7 @@ const AboutAll = () => {
       },
     },
     {
-      icon: <GiSparkles className="text-4xl text-pink-400" />,
+      icon: <GiSparkles className="text-4xl" style={{ color: gold[300] }} />,
       position: "bottom-20 right-10",
       animation: {
         y: [0, 30, 0],
@@ -36,7 +49,7 @@ const AboutAll = () => {
       },
     },
     {
-      icon: <MdOutlineEmojiPeople className="text-4xl text-blue-400" />,
+      icon: <MdOutlineEmojiPeople className="text-4xl" style={{ color: gold[200] }} />,
       position: "top-1/3 right-1/4",
       animation: {
         x: [0, 25, 0],
@@ -91,31 +104,31 @@ const AboutAll = () => {
       year: "2015",
       title: "Company Founded",
       description: "Started in a small office with just 3 team members",
-      icon: <GiThreeFriends className="text-2xl" />,
+      icon: <GiThreeFriends className="text-2xl" style={{ color: gold[500] }} />,
     },
     {
       year: "2017",
       title: "First Major Event",
       description: "Organized a 500-person corporate gala",
-      icon: <FaCalendarCheck className="text-2xl" />,
+      icon: <FaCalendarCheck className="text-2xl" style={{ color: gold[500] }} />,
     },
     {
       year: "2019",
       title: "Expanded Services",
       description: "Added full production and AV services",
-      icon: <FaLightbulb className="text-2xl" />,
+      icon: <FaLightbulb className="text-2xl" style={{ color: gold[500] }} />,
     },
     {
       year: "2022",
       title: "National Recognition",
       description: "Won 'Best Event Company' award",
-      icon: <FaTrophy className="text-2xl" />,
+      icon: <FaTrophy className="text-2xl" style={{ color: gold[500] }} />,
     },
     {
       year: "2023",
       title: "Current",
       description: "Serving clients nationwide with 50+ team members",
-      icon: <MdDiversity3 className="text-2xl" />,
+      icon: <MdDiversity3 className="text-2xl" style={{ color: gold[500] }} />,
     },
   ];
 
@@ -158,10 +171,10 @@ const AboutAll = () => {
             className="text-center px-4"
           >
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-              Our <span className="text-purple-400">Story</span> &{" "}
-              <span className="text-pink-400">Team</span>
+              Our <span style={{ color: gold[400] }}>Story</span> &{" "}
+              <span style={{ color: gold[300] }}>Team</span>
             </h1>
-            <p className="text-xl text-gray-200 max-w-2xl mx-auto">
+            <p className="text-xl" style={{ color: gold[200] }}>
               Discover the passion and people behind GoldenStorm's unforgettable
               experiences
             </p>
@@ -170,11 +183,20 @@ const AboutAll = () => {
       </div>
 
       <section className="relative overflow-hidden bg-gradient-to-b from-gray-900 to-black py-20">
-        {/* Glowing background elements */}
+        {/* Gold glowing background elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-purple-600 rounded-full filter blur-3xl opacity-10 animate-pulse"></div>
-          <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-pink-600 rounded-full filter blur-3xl opacity-10 animate-pulse delay-1000"></div>
-          <div className="absolute top-2/3 right-1/4 w-80 h-80 bg-blue-600 rounded-full filter blur-3xl opacity-10 animate-pulse delay-500"></div>
+          <div 
+            className="absolute top-1/4 left-1/4 w-80 h-80 rounded-full filter blur-3xl opacity-10 animate-pulse"
+            style={{ backgroundColor: gold[500] }}
+          ></div>
+          <div 
+            className="absolute bottom-1/3 right-1/3 w-96 h-96 rounded-full filter blur-3xl opacity-10 animate-pulse delay-1000"
+            style={{ backgroundColor: gold[600] }}
+          ></div>
+          <div 
+            className="absolute top-2/3 right-1/4 w-80 h-80 rounded-full filter blur-3xl opacity-10 animate-pulse delay-500"
+            style={{ backgroundColor: gold[700] }}
+          ></div>
         </div>
 
         {/* Floating decorative elements */}
@@ -190,8 +212,11 @@ const AboutAll = () => {
             className={`absolute ${item.position} hidden lg:flex items-center justify-center`}
           >
             <div className="relative group">
-              <div className="absolute -inset-1 bg-purple-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-200"></div>
-              <div className="relative p-3 bg-gray-900 rounded-full leading-none flex items-center justify-center">
+              <div 
+                className="absolute -inset-1 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-200"
+                style={{ backgroundColor: gold[500] }}
+              ></div>
+              <div className="relative p-3 bg-gray-900 rounded-full leading-none flex items-center justify-center border" style={{ borderColor: gold[800] }}>
                 {item.icon}
               </div>
             </div>
@@ -209,8 +234,11 @@ const AboutAll = () => {
               className="order-2 lg:order-1"
             >
               <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-200"></div>
-                <div className="relative bg-gray-900 rounded-2xl overflow-hidden border border-gray-800">
+                <div 
+                  className="absolute -inset-1 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-200"
+                  style={{ backgroundImage: `linear-gradient(to right, ${gold[500]}, ${gold[700]})` }}
+                ></div>
+                <div className="relative bg-gray-900 rounded-2xl overflow-hidden border" style={{ borderColor: gold[800] }}>
                   <img
                     src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZXZlbnR8ZW58MHx8MHx8fDA%3D"
                     alt="Akhil Kumar - Founder & CEO of GoldenStorm"
@@ -227,37 +255,37 @@ const AboutAll = () => {
               viewport={{ once: true }}
               className="order-1 lg:order-2 space-y-6"
             >
-              <h2 className="text-3xl font-bold text-white">
-                Meet <span className="text-purple-400">Akhil Kumar</span>, Our
+              <h2 className="text-3xl font-bold" style={{ color: gold[100] }}>
+                Meet <span style={{ color: gold[400] }}>Akhil Kumar</span>, Our
                 Founder
               </h2>
               <div className="relative">
-                <FaQuoteLeft className="text-4xl text-gray-700 absolute -top-2 -left-2" />
-                <p className="text-lg text-gray-400 pl-10">
+                <FaQuoteLeft className="text-4xl absolute -top-2 -left-2" style={{ color: gold[800] }} />
+                <p className="text-lg pl-10" style={{ color: gold[200] }}>
                   "I started GoldenStorm with a simple vision: to create events
                   that don't just happen, but truly shine. What began as a
                   passion project has grown into a family of creative
                   professionals who share this vision."
                 </p>
               </div>
-              <p className="text-gray-400">
-                With over 15 years in the event industry, Alex's expertise and
+              <p style={{ color: gold[200] }}>
+                With over 15 years in the event industry, Akhil's expertise and
                 innovative approach have shaped GoldenStorm's reputation for
                 excellence. His leadership continues to inspire our team to push
                 creative boundaries.
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
                 <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 rounded-full bg-purple-500"></div>
-                  <span className="text-gray-400">15+ Years Experience</span>
+                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: gold[500] }}></div>
+                  <span style={{ color: gold[200] }}>15+ Years Experience</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 rounded-full bg-pink-500"></div>
-                  <span className="text-gray-400">500+ Events Organized</span>
+                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: gold[600] }}></div>
+                  <span style={{ color: gold[200] }}>500+ Events Organized</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-                  <span className="text-gray-400">Industry Award Winner</span>
+                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: gold[400] }}></div>
+                  <span style={{ color: gold[200] }}>Industry Award Winner</span>
                 </div>
               </div>
             </motion.div>
@@ -270,16 +298,26 @@ const AboutAll = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-3xl font-bold text-center text-white mb-12"
+              className="text-3xl font-bold text-center mb-12"
             >
-              <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+              <span 
+                className="bg-clip-text text-transparent"
+                style={{ 
+                  backgroundImage: `linear-gradient(to right, ${gold[300]}, ${gold[500]}, ${gold[400]})`
+                }}
+              >
                 Our Journey
               </span>
             </motion.h2>
 
             <div className="relative">
               {/* Timeline line */}
-              <div className="absolute left-1/2 h-full w-0.5 bg-gradient-to-b from-purple-500 via-pink-500 to-blue-500 transform -translate-x-1/2"></div>
+              <div 
+                className="absolute left-1/2 h-full w-0.5 transform -translate-x-1/2"
+                style={{ 
+                  backgroundImage: `linear-gradient(to bottom, ${gold[500]}, ${gold[700]}, ${gold[500]})`
+                }}
+              ></div>
 
               {/* Timeline items */}
               <div className="space-y-12">
@@ -299,13 +337,24 @@ const AboutAll = () => {
                         index % 2 === 0 ? "pr-8 text-right" : "pl-8"
                       }`}
                     >
-                      <div className="inline-block bg-gray-900 rounded-lg border border-gray-800 px-4 py-2">
-                        <h4 className="text-xl font-bold text-white">
+                      <div 
+                        className="inline-block rounded-lg border px-4 py-2"
+                        style={{ 
+                          backgroundColor: 'rgba(15, 15, 15, 0.7)',
+                          borderColor: gold[800]
+                        }}
+                      >
+                        <h4 className="text-xl font-bold" style={{ color: gold[100] }}>
                           {item.year}
                         </h4>
                       </div>
                     </div>
-                    <div className="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center text-white relative z-10">
+                    <div 
+                      className="flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center relative z-10"
+                      style={{ 
+                        backgroundImage: `linear-gradient(to right, ${gold[500]}, ${gold[700]})`
+                      }}
+                    >
                       {item.icon}
                     </div>
                     <div
@@ -313,10 +362,10 @@ const AboutAll = () => {
                         index % 2 === 0 ? "pl-8" : "pr-8 text-right"
                       }`}
                     >
-                      <h4 className="text-xl font-bold text-white mb-2">
+                      <h4 className="text-xl font-bold mb-2" style={{ color: gold[100] }}>
                         {item.title}
                       </h4>
-                      <p className="text-gray-400">{item.description}</p>
+                      <p style={{ color: gold[200] }}>{item.description}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -333,11 +382,11 @@ const AboutAll = () => {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h3 className="text-3xl font-bold text-white mb-4">
-                The <span className="text-purple-400">Creative Minds</span>{" "}
+              <h3 className="text-3xl font-bold mb-4" style={{ color: gold[100] }}>
+                The <span style={{ color: gold[400] }}>Creative Minds</span>{" "}
                 Behind Your Events
               </h3>
-              <p className="text-gray-400 max-w-2xl mx-auto">
+              <p className="max-w-2xl mx-auto" style={{ color: gold[200] }}>
                 Our team of passionate professionals brings diverse expertise to
                 create your perfect event.
               </p>
@@ -353,8 +402,19 @@ const AboutAll = () => {
                   viewport={{ once: true }}
                   className="group relative"
                 >
-                  <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-200"></div>
-                  <div className="relative bg-gray-900 rounded-2xl overflow-hidden border border-gray-800">
+                  <div 
+                    className="absolute -inset-0.5 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-200"
+                    style={{ 
+                      backgroundImage: `linear-gradient(to right, ${gold[500]}, ${gold[700]})`
+                    }}
+                  ></div>
+                  <div 
+                    className="relative rounded-2xl overflow-hidden border"
+                    style={{ 
+                      backgroundColor: 'rgba(15, 15, 15, 0.7)',
+                      borderColor: gold[800]
+                    }}
+                  >
                     <div className="h-80 overflow-hidden">
                       <img
                         src={member.image}
@@ -363,14 +423,22 @@ const AboutAll = () => {
                       />
                     </div>
                     <div className="p-6">
-                      <h4 className="text-xl font-bold text-white mb-1">
+                      <h4 className="text-xl font-bold mb-1" style={{ color: gold[100] }}>
                         {member.name}
                       </h4>
-                      <p className="text-purple-400 mb-4">{member.role}</p>
+                      <p className="mb-4" style={{ color: gold[400] }}>{member.role}</p>
                       <div className="flex justify-center space-x-4">
                         <a
                           href={member.social.twitter}
-                          className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-400 transition-colors"
+                          className="w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+                          style={{ 
+                            backgroundColor: gold[900],
+                            color: gold[300],
+                            hover: { 
+                              backgroundColor: gold[500],
+                              color: '#111'
+                            }
+                          }}
                         >
                           <span className="sr-only">Twitter</span>
                           <svg
@@ -383,7 +451,15 @@ const AboutAll = () => {
                         </a>
                         <a
                           href={member.social.linkedin}
-                          className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-600 transition-colors"
+                          className="w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+                          style={{ 
+                            backgroundColor: gold[900],
+                            color: gold[300],
+                            hover: { 
+                              backgroundColor: gold[500],
+                              color: '#111'
+                            }
+                          }}
                         >
                           <span className="sr-only">LinkedIn</span>
                           <svg
@@ -396,7 +472,15 @@ const AboutAll = () => {
                         </a>
                         <a
                           href={member.social.instagram}
-                          className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-pink-600 transition-colors"
+                          className="w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+                          style={{ 
+                            backgroundColor: gold[900],
+                            color: gold[300],
+                            hover: { 
+                              backgroundColor: gold[500],
+                              color: '#111'
+                            }
+                          }}
                         >
                           <span className="sr-only">Instagram</span>
                           <svg
@@ -428,41 +512,89 @@ const AboutAll = () => {
               viewport={{ once: true }}
               className="grid grid-cols-2 md:grid-cols-4 gap-6"
             >
-              <div className="bg-gray-900 rounded-xl border border-gray-800 p-6 text-center">
+              <div 
+                className="rounded-xl border p-6 text-center"
+                style={{ 
+                  backgroundColor: 'rgba(15, 15, 15, 0.7)',
+                  borderColor: gold[800]
+                }}
+              >
                 <div className="flex justify-center mb-4">
-                  <div className="w-14 h-14 rounded-full bg-purple-900/50 flex items-center justify-center text-purple-400">
+                  <div 
+                    className="w-14 h-14 rounded-full flex items-center justify-center"
+                    style={{ 
+                      backgroundColor: gold[900] + '50',
+                      color: gold[400]
+                    }}
+                  >
                     <FaUsers className="text-2xl" />
                   </div>
                 </div>
-                <h4 className="text-3xl font-bold text-white mb-2">50+</h4>
-                <p className="text-gray-400">Team Members</p>
+                <h4 className="text-3xl font-bold mb-2" style={{ color: gold[100] }}>50+</h4>
+                <p style={{ color: gold[200] }}>Team Members</p>
               </div>
-              <div className="bg-gray-900 rounded-xl border border-gray-800 p-6 text-center">
+              <div 
+                className="rounded-xl border p-6 text-center"
+                style={{ 
+                  backgroundColor: 'rgba(15, 15, 15, 0.7)',
+                  borderColor: gold[800]
+                }}
+              >
                 <div className="flex justify-center mb-4">
-                  <div className="w-14 h-14 rounded-full bg-pink-900/50 flex items-center justify-center text-pink-400">
+                  <div 
+                    className="w-14 h-14 rounded-full flex items-center justify-center"
+                    style={{ 
+                      backgroundColor: gold[900] + '50',
+                      color: gold[400]
+                    }}
+                  >
                     <FaCalendarCheck className="text-2xl" />
                   </div>
                 </div>
-                <h4 className="text-3xl font-bold text-white mb-2">1000+</h4>
-                <p className="text-gray-400">Events Organized</p>
+                <h4 className="text-3xl font-bold mb-2" style={{ color: gold[100] }}>1000+</h4>
+                <p style={{ color: gold[200] }}>Events Organized</p>
               </div>
-              <div className="bg-gray-900 rounded-xl border border-gray-800 p-6 text-center">
+              <div 
+                className="rounded-xl border p-6 text-center"
+                style={{ 
+                  backgroundColor: 'rgba(15, 15, 15, 0.7)',
+                  borderColor: gold[800]
+                }}
+              >
                 <div className="flex justify-center mb-4">
-                  <div className="w-14 h-14 rounded-full bg-blue-900/50 flex items-center justify-center text-blue-400">
+                  <div 
+                    className="w-14 h-14 rounded-full flex items-center justify-center"
+                    style={{ 
+                      backgroundColor: gold[900] + '50',
+                      color: gold[400]
+                    }}
+                  >
                     <FaTrophy className="text-2xl" />
                   </div>
                 </div>
-                <h4 className="text-3xl font-bold text-white mb-2">12</h4>
-                <p className="text-gray-400">Industry Awards</p>
+                <h4 className="text-3xl font-bold mb-2" style={{ color: gold[100] }}>12</h4>
+                <p style={{ color: gold[200] }}>Industry Awards</p>
               </div>
-              <div className="bg-gray-900 rounded-xl border border-gray-800 p-6 text-center">
+              <div 
+                className="rounded-xl border p-6 text-center"
+                style={{ 
+                  backgroundColor: 'rgba(15, 15, 15, 0.7)',
+                  borderColor: gold[800]
+                }}
+              >
                 <div className="flex justify-center mb-4">
-                  <div className="w-14 h-14 rounded-full bg-green-900/50 flex items-center justify-center text-green-400">
+                  <div 
+                    className="w-14 h-14 rounded-full flex items-center justify-center"
+                    style={{ 
+                      backgroundColor: gold[900] + '50',
+                      color: gold[400]
+                    }}
+                  >
                     <MdDiversity3 className="text-2xl" />
                   </div>
                 </div>
-                <h4 className="text-3xl font-bold text-white mb-2">250+</h4>
-                <p className="text-gray-400">Happy Clients</p>
+                <h4 className="text-3xl font-bold mb-2" style={{ color: gold[100] }}>250+</h4>
+                <p style={{ color: gold[200] }}>Happy Clients</p>
               </div>
             </motion.div>
           </div>
@@ -475,57 +607,96 @@ const AboutAll = () => {
             viewport={{ once: true }}
             className="mb-20"
           >
-            <div className="bg-gradient-to-r from-purple-900/50 to-pink-900/50 rounded-2xl border border-gray-800 p-8 md:p-12">
-              <h3 className="text-3xl font-bold text-white mb-4 text-center">
+            <div 
+              className="rounded-2xl border p-8 md:p-12"
+              style={{ 
+                backgroundImage: `linear-gradient(to right, ${gold[800]}30, ${gold[900]}30)`,
+                borderColor: gold[700]
+              }}
+            >
+              <h3 className="text-3xl font-bold mb-4 text-center" style={{ color: gold[100] }}>
                 Ready to create something amazing together?
               </h3>
-              <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto text-center">
+              <p className="text-xl mb-8 max-w-2xl mx-auto text-center" style={{ color: gold[200] }}>
                 Our team is excited to bring your vision to life with creativity
                 and precision.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 rounded-full bg-purple-900/50 flex items-center justify-center text-purple-400 mb-4">
+                  <div 
+                    className="w-14 h-14 rounded-full flex items-center justify-center mb-4"
+                    style={{ 
+                      backgroundColor: gold[900] + '50',
+                      color: gold[400]
+                    }}
+                  >
                     <FaPhone className="text-xl" />
                   </div>
-                  <h4 className="text-xl font-bold text-white mb-2">Call Us</h4>
-                  <p className="text-gray-400">+1 (555) 123-4567</p>
+                  <h4 className="text-xl font-bold mb-2" style={{ color: gold[100] }}>Call Us</h4>
+                  <p style={{ color: gold[200] }}>+1 (555) 123-4567</p>
                 </div>
 
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 rounded-full bg-pink-900/50 flex items-center justify-center text-pink-400 mb-4">
+                  <div 
+                    className="w-14 h-14 rounded-full flex items-center justify-center mb-4"
+                    style={{ 
+                      backgroundColor: gold[900] + '50',
+                      color: gold[400]
+                    }}
+                  >
                     <FaEnvelope className="text-xl" />
                   </div>
-                  <h4 className="text-xl font-bold text-white mb-2">
+                  <h4 className="text-xl font-bold mb-2" style={{ color: gold[100] }}>
                     Email Us
                   </h4>
-                  <p className="text-gray-400">info@GoldenStorm.com</p>
+                  <p style={{ color: gold[200] }}>info@GoldenStorm.com</p>
                 </div>
 
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 rounded-full bg-blue-900/50 flex items-center justify-center text-blue-400 mb-4">
+                  <div 
+                    className="w-14 h-14 rounded-full flex items-center justify-center mb-4"
+                    style={{ 
+                      backgroundColor: gold[900] + '50',
+                      color: gold[400]
+                    }}
+                  >
                     <FaMapMarkerAlt className="text-xl" />
                   </div>
-                  <h4 className="text-xl font-bold text-white mb-2">
+                  <h4 className="text-xl font-bold mb-2" style={{ color: gold[100] }}>
                     Visit Us
                   </h4>
-                  <p className="text-gray-400">123 Event St, New York</p>
+                  <p style={{ color: gold[200] }}>123 Event St, New York</p>
                 </div>
               </div>
 
               <div className="text-center mt-10">
                 <Link to="/contact">
-                  {" "}
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-3 px-8 rounded-full hover:opacity-90 transition-opacity shadow-lg hover:shadow-xl">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl mr-4"
+                    style={{ 
+                      backgroundImage: `linear-gradient(to right, ${gold[500]}, ${gold[600]})`,
+                      color: '#111'
+                    }}
+                  >
                     Get in Touch
-                  </button>
+                  </motion.button>
                 </Link>
                 <Link to="/book-event">
-                  {" "}
-                  <button className=" bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:opacity-90 transition-opacity shadow-lg hover:shadow-xl">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl border-2"
+                    style={{ 
+                      borderColor: gold[100],
+                      color: gold[100],
+                      backgroundColor: 'transparent'
+                    }}
+                  >
                     Book Event Now
-                  </button>
+                  </motion.button>
                 </Link>
               </div>
             </div>

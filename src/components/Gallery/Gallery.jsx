@@ -4,6 +4,19 @@ import { useState } from "react";
 import { Helmet } from "react-helmet";
 
 const Gallery = () => {
+  // Gold color palette
+  const gold = {
+    100: "#FFF8E1",
+    200: "#FFECB3",
+    300: "#FFE082",
+    400: "#FFD54F",
+    500: "#FFC107", // Primary gold
+    600: "#FFB300",
+    700: "#FFA000",
+    800: "#FF8F00",
+    900: "#FF6F00"
+  };
+
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -14,8 +27,7 @@ const Gallery = () => {
       url: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZXZlbnR8ZW58MHx8MHx8fDA%3D",
       category: "Concerts",
       title: "Summer Music Festival 2023",
-      description:
-        "An electrifying music festival with top artists from around the world",
+      description: "An electrifying music festival with top artists from around the world",
     },
     {
       id: 2,
@@ -144,11 +156,10 @@ const Gallery = () => {
             className="text-center px-4"
           >
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-              Our <span className="text-purple-400">Event</span> Gallery
+              Our <span style={{ color: gold[400] }}>Event</span> Gallery
             </h1>
             <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-              A visual journey through our most memorable events and
-              celebrations
+              A visual journey through our most memorable events and celebrations
             </p>
           </motion.div>
         </div>
@@ -158,11 +169,20 @@ const Gallery = () => {
         id="gallery"
         className="relative overflow-hidden bg-gradient-to-b from-gray-900 to-black py-20"
       >
-        {/* Glowing background elements */}
+        {/* Gold glowing background elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-600 rounded-full filter blur-3xl opacity-10 animate-pulse"></div>
-          <div className="absolute bottom-1/3 right-1/3 w-80 h-80 bg-pink-600 rounded-full filter blur-3xl opacity-10 animate-pulse delay-1000"></div>
-          <div className="absolute top-2/3 right-1/4 w-72 h-72 bg-blue-600 rounded-full filter blur-3xl opacity-10 animate-pulse delay-500"></div>
+          <div 
+            className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full filter blur-3xl opacity-10 animate-pulse"
+            style={{ backgroundColor: gold[500] }}
+          ></div>
+          <div 
+            className="absolute bottom-1/3 right-1/3 w-80 h-80 rounded-full filter blur-3xl opacity-10 animate-pulse delay-1000"
+            style={{ backgroundColor: gold[600] }}
+          ></div>
+          <div 
+            className="absolute top-2/3 right-1/4 w-72 h-72 rounded-full filter blur-3xl opacity-10 animate-pulse delay-500"
+            style={{ backgroundColor: gold[700] }}
+          ></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -175,7 +195,12 @@ const Gallery = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 bg-clip-text text-transparent">
+              <span 
+                className="bg-clip-text text-transparent"
+                style={{ 
+                  backgroundImage: `linear-gradient(to right, ${gold[300]}, ${gold[500]}, ${gold[400]})`
+                }}
+              >
                 Event Portfolio
               </span>
             </h2>
@@ -201,7 +226,7 @@ const Gallery = () => {
                 onClick={() => setActiveCategory(category)}
                 className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                   activeCategory === category
-                    ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white"
+                    ? "bg-gradient-to-r from-amber-600 to-yellow-600 text-white"
                     : "bg-gray-800 text-gray-300 hover:bg-gray-700"
                 }`}
               >
@@ -225,7 +250,13 @@ const Gallery = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70 z-10"></div>
                 <div className="absolute inset-0 flex items-end p-6 z-20">
                   <div>
-                    <span className="inline-block px-3 py-1 bg-purple-600 rounded-full text-xs font-medium mb-2">
+                    <span 
+                      className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-2"
+                      style={{ 
+                        backgroundColor: gold[800],
+                        color: gold[200]
+                      }}
+                    >
                       {image.category}
                     </span>
                     <h3 className="text-xl font-bold text-white">
@@ -237,6 +268,7 @@ const Gallery = () => {
                   onClick={() => openImage(image, index)}
                   className="absolute top-4 right-4 w-10 h-10 bg-black bg-opacity-60 rounded-full flex items-center justify-center text-white z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   aria-label={`View ${image.title} in detail`}
+                  style={{ color: gold[400] }}
                 >
                   <FaSearchPlus className="text-lg" />
                 </button>
@@ -258,7 +290,15 @@ const Gallery = () => {
             viewport={{ once: true }}
             className="text-center mt-12"
           >
-            <button className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-medium text-lg shadow-lg hover:shadow-purple-500/50 transition-all duration-300 flex items-center mx-auto">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-3 rounded-full font-medium text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center mx-auto"
+              style={{ 
+                backgroundImage: `linear-gradient(to right, ${gold[500]}, ${gold[600]})`,
+                color: '#111'
+              }}
+            >
               View More Events
               <svg
                 className="ml-2 w-5 h-5"
@@ -273,7 +313,7 @@ const Gallery = () => {
                   d="M14 5l7 7m0 0l-7 7m7-7H3"
                 ></path>
               </svg>
-            </button>
+            </motion.button>
           </motion.div>
         </div>
 
@@ -291,6 +331,7 @@ const Gallery = () => {
                 className="absolute -right-12 top-0 w-10 h-10 bg-gray-900 rounded-full flex items-center justify-center text-white z-20 hover:bg-gray-800 transition-colors"
                 onClick={closeImage}
                 aria-label="Close image viewer"
+                style={{ color: gold[400] }}
               >
                 &times;
               </button>
@@ -301,6 +342,7 @@ const Gallery = () => {
                   navigate("prev");
                 }}
                 aria-label="Previous image"
+                style={{ color: gold[400] }}
               >
                 <FaArrowLeft />
               </button>
@@ -311,6 +353,7 @@ const Gallery = () => {
                   navigate("next");
                 }}
                 aria-label="Next image"
+                style={{ color: gold[400] }}
               >
                 <FaArrowRight />
               </button>
@@ -318,8 +361,9 @@ const Gallery = () => {
               <motion.div
                 initial={{ scale: 0.9 }}
                 animate={{ scale: 1 }}
-                className="relative bg-gray-900 rounded-xl overflow-hidden border border-gray-800"
+                className="relative bg-gray-900 rounded-xl overflow-hidden border"
                 onClick={(e) => e.stopPropagation()}
+                style={{ borderColor: gold[800] }}
               >
                 <img
                   src={selectedImage.url}
@@ -327,7 +371,13 @@ const Gallery = () => {
                   className="w-full h-auto max-h-[80vh] object-contain"
                 />
                 <div className="p-6">
-                  <span className="inline-block px-3 py-1 bg-purple-600 rounded-full text-xs font-medium mb-2">
+                  <span 
+                    className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-2"
+                    style={{ 
+                      backgroundColor: gold[800],
+                      color: gold[200]
+                    }}
+                  >
                     {selectedImage.category}
                   </span>
                   <h3 className="text-2xl font-bold text-white mb-2">

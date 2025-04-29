@@ -52,8 +52,8 @@ const Footer = () => {
     <footer className="relative bg-gray-900 overflow-hidden">
       {/* Glowing background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-0 w-64 h-64 bg-purple-600 rounded-full filter blur-3xl opacity-10"></div>
-        <div className="absolute bottom-0 right-0 w-80 h-80 bg-pink-600 rounded-full filter blur-3xl opacity-10"></div>
+        <div className="absolute top-0 left-0 w-64 h-64 bg-yellow-400 rounded-full filter blur-3xl opacity-10"></div>
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-yellow-300 rounded-full filter blur-3xl opacity-10"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -68,9 +68,9 @@ const Footer = () => {
           >
             <Link to="/" className="flex items-center">
               <div className="relative">
-                <div className="absolute -inset-1 bg-purple-600 rounded-lg blur opacity-75"></div>
+                <div className="absolute -inset-1 bg-yellow-500 rounded-lg blur opacity-75"></div>
                 <div className="relative px-4 py-2 bg-gray-900 rounded-lg">
-                  <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+                  <h2 className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
                     GoldenStorm
                   </h2>
                 </div>
@@ -89,8 +89,8 @@ const Footer = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ y: -3, color: "#E879F9" }}
-                  className="text-gray-400 hover:text-purple-400 text-xl transition-colors duration-300"
+                  whileHover={{ y: -3, color: "#FFD700" }}
+                  className="text-gray-400 hover:text-yellow-400 text-xl transition-colors duration-300"
                   aria-label={social.name}
                 >
                   {social.icon}
@@ -121,7 +121,7 @@ const Footer = () => {
                   >
                     <Link
                       to={link.path}
-                      className="text-gray-400 hover:text-purple-400 transition-colors duration-300"
+                      className="text-gray-400 hover:text-yellow-400 transition-colors duration-300"
                     >
                       {link.name}
                     </Link>
@@ -142,17 +142,17 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-white">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
-                <FaMapMarkerAlt className="text-purple-400 mt-1 flex-shrink-0" />
+                <FaMapMarkerAlt className="text-yellow-400 mt-1 flex-shrink-0" />
                 <span className="text-gray-400">
                   123 Event Street, Glow City, GC 12345
                 </span>
               </li>
               <li className="flex items-center space-x-3">
-                <FaPhoneAlt className="text-purple-400" />
+                <FaPhoneAlt className="text-yellow-400" />
                 <span className="text-gray-400">+1 (555) 123-4567</span>
               </li>
               <li className="flex items-center space-x-3">
-                <FaEnvelope className="text-purple-400" />
+                <FaEnvelope className="text-yellow-400" />
                 <span className="text-gray-400">info@goldenstorm.com</span>
               </li>
             </ul>
@@ -166,12 +166,12 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Your email"
-                  className="px-4 py-2 w-full rounded-l-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="px-4 py-2 w-full rounded-l-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-500"
                 />
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-r-lg"
+                  className="px-4 py-2 bg-gradient-to-r from-yellow-400 to-yellow-600 text-white rounded-r-lg"
                 >
                   Join
                 </motion.button>
@@ -193,7 +193,7 @@ const Footer = () => {
           }}
           className="absolute bottom-10 left-10 hidden lg:block"
         >
-          <div className="w-8 h-8 rounded-full bg-purple-500 opacity-20"></div>
+          <div className="w-8 h-8 rounded-full bg-yellow-400 opacity-20"></div>
         </motion.div>
 
         <motion.div
@@ -209,7 +209,7 @@ const Footer = () => {
           }}
           className="absolute top-20 right-20 hidden lg:block"
         >
-          <div className="w-6 h-6 rounded-full bg-pink-500 opacity-20"></div>
+          <div className="w-6 h-6 rounded-full bg-yellow-300 opacity-20"></div>
         </motion.div>
 
         {/* Copyright */}

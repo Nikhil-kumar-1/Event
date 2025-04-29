@@ -76,8 +76,8 @@ const Contact = () => {
             className="text-center px-4"
           >
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-              <span className="text-purple-400">Get</span> In{" "}
-              <span className="text-pink-400">Touch</span>
+              <span className="text-amber-400">Get</span> In{" "}
+              <span className="text-yellow-400">Touch</span>
             </h1>
             <p className="text-xl text-gray-200 max-w-2xl mx-auto">
               Have questions or ready to plan your next event? Reach out to our
@@ -93,9 +93,9 @@ const Contact = () => {
       >
         {/* Glowing background elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-600 rounded-full filter blur-3xl opacity-10 animate-pulse"></div>
-          <div className="absolute bottom-1/3 right-1/3 w-80 h-80 bg-pink-600 rounded-full filter blur-3xl opacity-10 animate-pulse delay-1000"></div>
-          <div className="absolute top-2/3 right-1/4 w-72 h-72 bg-blue-600 rounded-full filter blur-3xl opacity-10 animate-pulse delay-500"></div>
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-amber-600 rounded-full filter blur-3xl opacity-10 animate-pulse"></div>
+          <div className="absolute bottom-1/3 right-1/3 w-80 h-80 bg-yellow-600 rounded-full filter blur-3xl opacity-10 animate-pulse delay-1000"></div>
+          <div className="absolute top-2/3 right-1/4 w-72 h-72 bg-amber-700 rounded-full filter blur-3xl opacity-10 animate-pulse delay-500"></div>
         </div>
 
         {/* Animated decorative element */}
@@ -108,7 +108,7 @@ const Contact = () => {
             repeat: Infinity,
             ease: "linear",
           }}
-          className="absolute top-20 right-20 hidden lg:block text-purple-400 opacity-20 text-6xl"
+          className="absolute top-20 right-20 hidden lg:block text-amber-400 opacity-20 text-6xl"
         >
           <GiSpinningBlades />
         </motion.div>
@@ -131,7 +131,7 @@ const Contact = () => {
                 <div className="space-y-6">
                   <div className="flex items-start">
                     <div className="flex-shrink-0 mt-1">
-                      <FaMapMarkerAlt className="text-purple-400 text-xl" />
+                      <FaMapMarkerAlt className="text-amber-400 text-xl" />
                     </div>
                     <div className="ml-4">
                       <h3 className="text-lg font-medium text-white mb-1">
@@ -145,7 +145,7 @@ const Contact = () => {
 
                   <div className="flex items-start">
                     <div className="flex-shrink-0 mt-1">
-                      <FaPhoneAlt className="text-purple-400 text-xl" />
+                      <FaPhoneAlt className="text-amber-400 text-xl" />
                     </div>
                     <div className="ml-4">
                       <h3 className="text-lg font-medium text-white mb-1">
@@ -158,7 +158,7 @@ const Contact = () => {
 
                   <div className="flex items-start">
                     <div className="flex-shrink-0 mt-1">
-                      <FaEnvelope className="text-purple-400 text-xl" />
+                      <FaEnvelope className="text-amber-400 text-xl" />
                     </div>
                     <div className="ml-4">
                       <h3 className="text-lg font-medium text-white mb-1">
@@ -171,7 +171,7 @@ const Contact = () => {
 
                   <div className="flex items-start">
                     <div className="flex-shrink-0 mt-1">
-                      <FaClock className="text-purple-400 text-xl" />
+                      <FaClock className="text-amber-400 text-xl" />
                     </div>
                     <div className="ml-4">
                       <h3 className="text-lg font-medium text-white mb-1">
@@ -186,15 +186,15 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-r from-purple-900 to-pink-900 rounded-xl p-8">
+              <div className="bg-gradient-to-r from-amber-900 to-yellow-900 rounded-xl p-8">
                 <h2 className="text-2xl font-bold text-white mb-4">
                   Emergency Event Support
                 </h2>
-                <p className="text-purple-100 mb-6">
+                <p className="text-amber-100 mb-6">
                   Need immediate assistance with an upcoming event? Our 24/7
                   support team is here to help.
                 </p>
-                <button className="px-6 py-3 bg-white text-purple-900 rounded-lg font-medium hover:bg-opacity-90 transition-colors duration-300">
+                <button className="px-6 py-3 bg-white text-amber-900 rounded-lg font-medium hover:bg-opacity-90 transition-colors duration-300">
                   Call Emergency Support
                 </button>
               </div>
@@ -227,7 +227,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                     placeholder="Your name"
                   />
                 </div>
@@ -247,7 +247,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                       placeholder="your.email@example.com"
                     />
                   </div>
@@ -265,7 +265,7 @@ const Contact = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                       placeholder="+1 (___) ___-____"
                     />
                   </div>
@@ -285,7 +285,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                     placeholder="Tell us about your event..."
                   ></textarea>
                 </div>
@@ -295,7 +295,7 @@ const Contact = () => {
                     type="submit"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-medium flex items-center justify-center space-x-2"
+                    className="w-full px-6 py-3 bg-gradient-to-r from-amber-600 to-yellow-600 text-white rounded-lg font-medium flex items-center justify-center space-x-2"
                   >
                     <span>Send Message</span>
                     <FaPaperPlane className="text-lg" />
@@ -317,7 +317,7 @@ const Contact = () => {
               Our Location
             </h2>
             <div className="relative h-96 rounded-2xl overflow-hidden border border-gray-800">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 opacity-20"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-yellow-500 opacity-20"></div>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215209132733!2d-73.98784492452548!3d40.74844047138993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1712345678901"
                 width="100%"

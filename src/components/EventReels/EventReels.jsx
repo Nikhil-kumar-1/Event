@@ -88,7 +88,7 @@ const EventReels = () => {
   return (
     <>
       <Helmet>
-        <title>Event Reels | EventGlow - Experience Our Magic</title>
+        <title>Event Reels | GoldenStorm - Experience Our Magic</title>
         <meta name="description" content="Watch our stunning event reels showcasing weddings, corporate events, and celebrations we've brought to life." />
       </Helmet>
 
@@ -110,7 +110,7 @@ const EventReels = () => {
                 ease: "linear",
                 delay: Math.random() * 5
               }}
-              className="absolute text-purple-400 text-xl"
+              className="absolute text-amber-400 text-xl"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`
@@ -141,7 +141,7 @@ const EventReels = () => {
               transition={{ duration: 0.8 }}
               className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6"
             >
-              <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600 bg-clip-text text-transparent">
                 Event Reels
               </span>
             </motion.h1>
@@ -160,7 +160,7 @@ const EventReels = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
-              <div className="flex items-center justify-center gap-2 text-purple-300 animate-bounce">
+              <div className="flex items-center justify-center gap-2 text-amber-300 animate-bounce">
                 <span>Swipe up</span>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
@@ -180,7 +180,7 @@ const EventReels = () => {
               viewport={{ once: true }}
               className="text-3xl md:text-4xl font-bold mb-16 text-center"
             >
-              <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600 bg-clip-text text-transparent">
                 Our Event Highlights
               </span>
             </motion.h2>
@@ -212,7 +212,7 @@ const EventReels = () => {
                   
                   <div className="absolute bottom-0 left-0 right-0 z-20 p-6">
                     <div className="flex items-center gap-2 mb-2">
-                      <FaMusic className="text-purple-400" />
+                      <FaMusic className="text-amber-400" />
                       <span className="text-sm font-medium">Original Sound</span>
                     </div>
                     <h3 className="text-xl font-bold mb-1">{reel.title}</h3>
@@ -241,7 +241,7 @@ const EventReels = () => {
                     </div>
                   </div>
                   
-                  <button className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 w-16 h-16 bg-purple-600 bg-opacity-70 rounded-full flex items-center justify-center">
+                  <button className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 w-16 h-16 bg-amber-600 bg-opacity-70 rounded-full flex items-center justify-center">
                     <FaPlay className="text-2xl ml-1" />
                   </button>
                 </motion.div>
@@ -269,7 +269,7 @@ const EventReels = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <button
-                className="absolute -top-12 right-0 text-white text-2xl z-50 hover:text-purple-400 transition-colors"
+                className="absolute -top-12 right-0 text-white text-2xl z-50 hover:text-amber-400 transition-colors"
                 onClick={closeModal}
               >
                 <FaTimes />
@@ -313,10 +313,10 @@ const EventReels = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="max-w-4xl mx-auto bg-gradient-to-r from-purple-900 to-blue-900 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden"
+            className="max-w-4xl mx-auto bg-gradient-to-r from-amber-900 to-yellow-900 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden"
           >
-            <div className="absolute -top-20 -right-20 w-64 h-64 bg-purple-500 rounded-full filter blur-3xl opacity-20"></div>
-            <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-pink-500 rounded-full filter blur-3xl opacity-20"></div>
+            <div className="absolute -top-20 -right-20 w-64 h-64 bg-amber-500 rounded-full filter blur-3xl opacity-20"></div>
+            <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-yellow-500 rounded-full filter blur-3xl opacity-20"></div>
             
             <h2 className="text-3xl md:text-4xl font-bold mb-6 relative z-10">
               Ready to Create Your Own Magic?
@@ -328,7 +328,7 @@ const EventReels = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-white text-purple-900 rounded-lg font-medium hover:bg-opacity-90 transition-all relative z-10"
+              className="px-8 py-4 bg-white text-amber-900 rounded-lg font-medium hover:bg-opacity-90 transition-all relative z-10"
             >
               Book Your Event Now
             </motion.button></Link>
@@ -338,5 +338,5 @@ const EventReels = () => {
     </>
   );
 };
-
+ 
 export default EventReels;
